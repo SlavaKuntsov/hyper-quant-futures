@@ -1,0 +1,1 @@
+# HyperQuant Futures Test Task
