@@ -1,0 +1,46 @@
+services:
+
+  futures-service:
+    container_name: futures-service
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: server/FuturesDockerfile
+    ports:
+      - "7001:7001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - CONNECTION_STRING=Host=movie-postgres;Port=5432;Database=futures;Username=postgres;Password=1;Timezone=Europe/Minsk;
+      - REDIS_CONFIGURATION=redis:6379
+#    volumes:
+#      - ./nginx/certificates/localhost.pfx:/app/localhost.pfx  
+    depends_on:
+      - movie-postgres
+      - redis
+
+  futures-postgres:
+    container_name: futures-postgres
+    image: postgres:alpine
+    mem_limit: 512m
+    restart: unless-stopped
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: futures
+    volumes:
+      - futures-postgres-data:/var/lib/postgresql/data
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    mem_limit: 256m
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    environment:
+      REDIS_PASSWORD: 1
+      
+volumes:
+  futures-postgres-data:
