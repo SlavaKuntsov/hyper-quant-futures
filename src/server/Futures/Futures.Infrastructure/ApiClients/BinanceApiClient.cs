@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Net.Http.Json;
+using Domain.Exceptions;
 using Futures.Application.DTOs;
 using Futures.Application.Interfaces.ApiClients;
 
@@ -11,11 +12,22 @@ public class BinanceApiClient(HttpClient httpClient) : IBinanceApiClient
 		string symbol,
 		CancellationToken cancellationToken)
 	{
-		var response = await httpClient.GetFromJsonAsync<BinanceTickerDto>(
+		var response = await httpClient.GetAsync(
 			$"/fapi/v1/ticker/price?symbol={symbol}",
 			cancellationToken);
 
-		return decimal.Parse(response.Price, CultureInfo.InvariantCulture);
+		if (!response.IsSuccessStatusCode)
+		{
+			var errorContent = await response.Content.ReadFromJsonAsync<BinanceErrorDto>(
+				cancellationToken);
+
+			throw new UnprocessableContentException(errorContent.Message);
+		}
+
+		var ticker = await response.Content.ReadFromJsonAsync<BinanceTickerDto>(
+			cancellationToken);
+
+		return decimal.Parse(ticker.Price, CultureInfo.InvariantCulture);
 	}
 
 	public async Task<IEnumerable<BinanceFutureContractDto>> GetFuturesAsync(
