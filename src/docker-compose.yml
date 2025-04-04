@@ -10,10 +10,11 @@ services:
       - "7001:7001"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - CONNECTION_STRING=Host=movie-postgres;Port=5432;Database=futures;Username=postgres;Password=1;Timezone=Europe/Minsk;
+      - CONNECTION_STRING=Host=futures-postgres;Port=5432;Database=futures;Username=postgres;Password=1;Timezone=Europe/Minsk;
+      - HANGFIRE_CONNECTION_STRING=Host=futures-postgres;Port=5432;Database=futures_hangfire;Username=postgres;Password=1;Timezone=Europe/Minsk;
       - REDIS_CONFIGURATION=redis:6379
-#    volumes:
-#      - ./nginx/certificates/localhost.pfx:/app/localhost.pfx  
+    #    volumes:
+    #      - ./nginx/certificates/localhost.pfx:/app/localhost.pfx  
     depends_on:
       - movie-postgres
       - redis
@@ -41,6 +42,6 @@ services:
       - "6379:6379"
     environment:
       REDIS_PASSWORD: 1
-      
+
 volumes:
   futures-postgres-data:

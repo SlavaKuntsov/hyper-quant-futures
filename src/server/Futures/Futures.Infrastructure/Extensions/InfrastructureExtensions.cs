@@ -16,7 +16,7 @@ public static class InfrastructureExtensions
 		this IServiceCollection services,
 		IConfiguration configuration)
 	{
-		// можем использовать Redis
+		// can use redis
 		services.AddRedis(configuration);
 
 		// // default http client configuration

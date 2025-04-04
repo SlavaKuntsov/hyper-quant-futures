@@ -1,4 +1,3 @@
-using Extensions.Authorization;
 using Extensions.Common;
 using Extensions.Exceptions;
 using Extensions.Exceptions.Middlewares;
@@ -8,6 +7,7 @@ using Futures.API.Extensions;
 using Futures.Application.Extensions;
 using Futures.Infrastructure.Extensions;
 using Futures.Persistence.Extensions;
+using Hangfire;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -28,6 +28,7 @@ services
 	.AddExceptions()
 	// .AddAuthorization(configuration)
 	.AddSwagger()
+	.AddHangfire(configuration)
 	.AddHealthChecks();
 
 // service extensions
@@ -45,6 +46,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+app.UseHangfireDashboard();
 
 app.UseExceptionHandler();
 app.UseMiddleware<RequestLogContextMiddleware>();
@@ -75,5 +78,8 @@ app.UseCors();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+// hangfire jobs configurations
+JobsExtensions.AddJobs();
 
 app.Run();

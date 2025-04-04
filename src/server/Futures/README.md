@@ -1,0 +1,1 @@
+    dotnet ef migrations add initial -s Futures.API -p Futures.Persistence

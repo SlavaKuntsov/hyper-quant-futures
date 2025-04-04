@@ -1,4 +1,5 @@
 using Futures.Application.Handlers.Commands.Futures.FuturesDifference;
+using Futures.Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,7 @@ public class FuturesController(
 			symbol);
 
 		var difference = await mediator.Send(
-			new FuturesDifferenceCommand(symbol),
+			new FuturesDifferenceCommand(symbol, TimeIntervalType.None),
 			cancellationToken);
 
 		logger.LogInformation(
