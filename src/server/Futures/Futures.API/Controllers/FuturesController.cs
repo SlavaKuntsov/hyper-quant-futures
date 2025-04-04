@@ -10,7 +10,7 @@ public class FuturesController(
 	IMediator mediator,
 	ILogger<FuturesController> logger) : ControllerBase
 {
-	[HttpPost("/futures/difference")]
+	[HttpPost("/futures/quarterDifference")]
 	public async Task<IActionResult> Create(
 		[FromQuery] string symbol,
 		CancellationToken cancellationToken)
@@ -24,9 +24,10 @@ public class FuturesController(
 			cancellationToken);
 
 		logger.LogInformation(
-			"Finish to calculate the difference of futures for {Symbol} symbol.",
-			symbol);
+			"Successfully calculated the futures difference for symbol {Symbol}: {Difference}.",
+			symbol,
+			difference);
 
-		return Ok(difference);
+		return Ok(new { difference });
 	}
 }

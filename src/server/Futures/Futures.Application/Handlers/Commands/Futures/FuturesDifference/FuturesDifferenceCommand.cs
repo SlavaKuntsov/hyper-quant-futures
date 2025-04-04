@@ -17,24 +17,31 @@ public sealed class FuturesDifferenceCommandHandler(
 {
 	public async Task<decimal> Handle(FuturesDifferenceCommand request, CancellationToken cancellationToken)
 	{
-		logger.LogInformation("Getting futures.");
+		logger.LogInformation("Fetching futures for symbol {Symbol}.", request.Symbol);
 
 		var futuresPair = await binanceApiClient.GetFuturesAsync(
 			request.Symbol,
 			cancellationToken);
 
+		var sortedFutures = futuresPair
+			.OrderBy(f => f.DeliveryDate);
+
 		if (!futuresPair.Any())
 			throw new NotFoundException($"No futures found for symbol: {request.Symbol}.");
 
-		foreach (var future in futuresPair)
-		{
-			logger.LogInformation(
-				"Getting future {Symbol}.",
-				future.Symbol);
 		
-					
-		}
+		var currentQuarterPrice = await binanceApiClient.GetFuturePriceAsync(
+			sortedFutures.First().Symbol,
+			cancellationToken);
 
-		throw new NotImplementedException();
+		var nextQuarterPrice = await binanceApiClient.GetFuturePriceAsync(
+			sortedFutures.Skip(1).First().Symbol,
+			cancellationToken);
+
+		var difference = nextQuarterPrice - currentQuarterPrice;
+
+		logger.LogInformation("Calculated price difference: {Difference}", difference);
+
+		return difference;
 	}
 }
