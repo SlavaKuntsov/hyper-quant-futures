@@ -1,5 +1,13 @@
+using Extensions.Authorization;
+using Extensions.Common;
+using Extensions.Exceptions;
+using Extensions.Exceptions.Middlewares;
+using Extensions.Logging;
+using Extensions.Swagger;
 using Futures.API.Extensions;
-using Futures.API.Middlewares;
+using Futures.Application.Extensions;
+using Futures.Infrastructure.Extensions;
+using Futures.Persistence.Extensions;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -11,10 +19,23 @@ var services = builder.Services;
 var configuration = builder.Configuration;
 var host = builder.Host;
 
-// services configurations
+// Если нам нужны https и у нас есть сертификаты
+// builder.UseHttps();
+
+// shared extensions
+services
+	.AddCommon()
+	.AddExceptions()
+	.AddAuthorization(configuration)
+	.AddSwagger()
+	.AddHealthChecks();
+
+// service extensions
 services
 	.AddApi()
-	.AddAuth(configuration);
+	.AddApplication()
+	.AddInfrastructure(configuration)
+	.AddPersistence(configuration);
 
 host.AddLogging();
 
@@ -27,6 +48,7 @@ app.MapControllers();
 
 app.UseExceptionHandler();
 app.UseMiddleware<RequestLogContextMiddleware>();
+
 app.UseSerilogRequestLogging();
 
 app.MapHealthChecks(
@@ -51,10 +73,7 @@ app.UseForwardedHeaders(
 	});
 app.UseCors();
 
-if (app.Environment.IsDevelopment())
-{
-	app.UseSwagger();
-	app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();

@@ -1,10 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D22A7D2A-DD6C-42F7-8836-97BDFCD47752}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.API", "server\Futures\Futures.API\Futures.API.csproj", "{86E37F0D-3704-49C0-8B11-BD32AD6BD8C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Futures", "Futures", "{A2D74324-AE73-4327-9F36-55B6D9988DC2}"
+	ProjectSection(SolutionItems) = preProject
+		server\FuturesDockerfile = server\FuturesDockerfile
+		server\Futures\README.md = server\Futures\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.Domain", "server\Futures\Futures.Domain\Futures.Domain.csproj", "{A39837C3-7309-4E33-9E8C-6C9DB2C67A3F}"
 EndProject
@@ -12,7 +19,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.Application", "serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.Infrastructure", "server\Futures\Futures.Infrastructure\Futures.Infrastructure.csproj", "{D29E760E-2089-455F-BD1A-15FC6C4F72A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.Persistance", "server\Futures\Futures.Persistance\Futures.Persistance.csproj", "{510D31C0-1D75-41D1-928F-A462DCB1AE56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.Persistence", "server\Futures\Futures.Persistence\Futures.Persistence.csproj", "{510D31C0-1D75-41D1-928F-A462DCB1AE56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{2A897200-091A-4686-B1E5-BAEBFC3C6AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databases", "server\Shared\Databases\Databases.csproj", "{7BEECC08-0868-495F-9AC3-FCD2FC97FF98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "server\Shared\Domain\Domain.csproj", "{7D56137D-498C-41A5-8A68-D2BCCE8C66B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "server\Shared\Extensions\Extensions.csproj", "{B2867755-8D27-4B45-AF50-AE09DE0DC291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "server\Shared\Utilities\Utilities.csproj", "{C30A1BDE-2103-472C-9C68-7AB4FDA3BC56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis", "server\Shared\Redis\Redis.csproj", "{AA0833A7-3BCD-49F3-98D4-0CFCF1988584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +59,26 @@ Global
 		{510D31C0-1D75-41D1-928F-A462DCB1AE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{510D31C0-1D75-41D1-928F-A462DCB1AE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{510D31C0-1D75-41D1-928F-A462DCB1AE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BEECC08-0868-495F-9AC3-FCD2FC97FF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEECC08-0868-495F-9AC3-FCD2FC97FF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEECC08-0868-495F-9AC3-FCD2FC97FF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEECC08-0868-495F-9AC3-FCD2FC97FF98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D56137D-498C-41A5-8A68-D2BCCE8C66B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D56137D-498C-41A5-8A68-D2BCCE8C66B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D56137D-498C-41A5-8A68-D2BCCE8C66B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D56137D-498C-41A5-8A68-D2BCCE8C66B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2867755-8D27-4B45-AF50-AE09DE0DC291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2867755-8D27-4B45-AF50-AE09DE0DC291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2867755-8D27-4B45-AF50-AE09DE0DC291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2867755-8D27-4B45-AF50-AE09DE0DC291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30A1BDE-2103-472C-9C68-7AB4FDA3BC56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30A1BDE-2103-472C-9C68-7AB4FDA3BC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30A1BDE-2103-472C-9C68-7AB4FDA3BC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30A1BDE-2103-472C-9C68-7AB4FDA3BC56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA0833A7-3BCD-49F3-98D4-0CFCF1988584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA0833A7-3BCD-49F3-98D4-0CFCF1988584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA0833A7-3BCD-49F3-98D4-0CFCF1988584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA0833A7-3BCD-49F3-98D4-0CFCF1988584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A2D74324-AE73-4327-9F36-55B6D9988DC2} = {D22A7D2A-DD6C-42F7-8836-97BDFCD47752}
@@ -48,5 +87,11 @@ Global
 		{5ABC3119-BBD4-441C-A5EE-F26962BCC07B} = {A2D74324-AE73-4327-9F36-55B6D9988DC2}
 		{D29E760E-2089-455F-BD1A-15FC6C4F72A4} = {A2D74324-AE73-4327-9F36-55B6D9988DC2}
 		{510D31C0-1D75-41D1-928F-A462DCB1AE56} = {A2D74324-AE73-4327-9F36-55B6D9988DC2}
+		{2A897200-091A-4686-B1E5-BAEBFC3C6AA3} = {D22A7D2A-DD6C-42F7-8836-97BDFCD47752}
+		{7BEECC08-0868-495F-9AC3-FCD2FC97FF98} = {2A897200-091A-4686-B1E5-BAEBFC3C6AA3}
+		{7D56137D-498C-41A5-8A68-D2BCCE8C66B1} = {2A897200-091A-4686-B1E5-BAEBFC3C6AA3}
+		{B2867755-8D27-4B45-AF50-AE09DE0DC291} = {2A897200-091A-4686-B1E5-BAEBFC3C6AA3}
+		{C30A1BDE-2103-472C-9C68-7AB4FDA3BC56} = {2A897200-091A-4686-B1E5-BAEBFC3C6AA3}
+		{AA0833A7-3BCD-49F3-98D4-0CFCF1988584} = {2A897200-091A-4686-B1E5-BAEBFC3C6AA3}
 	EndGlobalSection
 EndGlobal
