@@ -9,12 +9,19 @@
 
     <ItemGroup>
         <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1"/>
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.8.18" />
+        <PackageReference Include="Hangfire.PostgreSql" Version="1.20.12" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.14"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.3"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\Extensions\Extensions.csproj"/>
+        <ProjectReference Include="..\..\Shared\Hangfire\Hangfire.csproj" />
         <ProjectReference Include="..\Futures.Application\Futures.Application.csproj"/>
         <ProjectReference Include="..\Futures.Domain\Futures.Domain.csproj"/>
         <ProjectReference Include="..\Futures.Infrastructure\Futures.Infrastructure.csproj"/>

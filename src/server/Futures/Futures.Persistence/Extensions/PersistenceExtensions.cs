@@ -15,7 +15,9 @@ public static class PersistenceExtensions
 	{
 		services.AddPostgres<IFuturesDbContext, FuturesDbContext>(configuration);
 
-		services.AddScoped<IFuturesRepository, FuturesRepository>();
+		services.AddScoped<IFutureContractsRepository, FutureContractContractsRepository>();
+		services.AddScoped<IPricePointsRepository, PricePointsRepository>();
+		services.AddScoped<IPriceDifferencesRepository, PriceDifferencesRepository>();
 
 		return services;
 	}
