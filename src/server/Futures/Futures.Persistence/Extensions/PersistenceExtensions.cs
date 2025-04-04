@@ -1,4 +1,5 @@
 ﻿using Databases;
+using Futures.Application.Data;
 using Futures.Domain.Interfaces.Repositories;
 using Futures.Persistence.Repositories;
 using Microsoft.Extensions.Configuration;
@@ -12,7 +13,7 @@ public static class PersistenceExtensions
 		this IServiceCollection services,
 		IConfiguration configuration)
 	{
-		services.AddPostgres<FuturesDbContext>(configuration);
+		services.AddPostgres<IFuturesDbContext, FuturesDbContext>(configuration);
 
 		services.AddScoped<IFuturesRepository, FuturesRepository>();
 

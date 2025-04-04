@@ -4,6 +4,157 @@
     "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Infrastructure\\Futures.Infrastructure.csproj": {}
   },
   "projects": {
+    "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj",
+        "projectName": "Futures.Application",
+        "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj",
+        "packagesPath": "C:\\Users\\Slava\\.nuget\\packages\\",
+        "outputPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Slava\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj": {
+                "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj"
+              },
+              "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj",
+        "projectName": "Futures.Domain",
+        "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj",
+        "packagesPath": "C:\\Users\\Slava\\.nuget\\packages\\",
+        "outputPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Slava\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Infrastructure\\Futures.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,6 +183,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj": {
+                "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj"
+              },
               "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Redis\\Redis.csproj": {
                 "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Redis\\Redis.csproj"
               }
@@ -61,8 +215,77 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Slava\\.nuget\\packages\\",
+        "outputPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Slava\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",

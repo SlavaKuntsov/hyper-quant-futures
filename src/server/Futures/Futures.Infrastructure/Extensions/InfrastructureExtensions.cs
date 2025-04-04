@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Futures.Application.Interfaces.ApiClients;
+using Futures.Infrastructure.ApiClients;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Redis;
 
@@ -11,6 +13,13 @@ public static class InfrastructureExtensions
 		IConfiguration configuration)
 	{
 		services.AddRedis(configuration);
+
+		services.AddHttpClient<IBinanceApiClient, BinanceApiClient>(
+			client =>
+			{
+				client.BaseAddress = new Uri("https://fapi.binance.com");
+				client.Timeout = TimeSpan.FromSeconds(30);
+			});
 
 		return services;
 	}

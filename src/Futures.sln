@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D22A7D2A-DD6C-42F7-8836-97BDFCD47752}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Futures.API", "server\Futures\Futures.API\Futures.API.csproj", "{86E37F0D-3704-49C0-8B11-BD32AD6BD8C0}"

@@ -24,4 +24,25 @@ public static class DatabasesExtension
 
 		return services;
 	}
+
+	public static IServiceCollection AddPostgres<TContextService, TContextImplementation>(
+		this IServiceCollection services,
+		IConfiguration configuration)
+		where TContextImplementation : DbContext, TContextService
+		where TContextService : class
+	{
+		var name = typeof(TContextImplementation).Name;
+
+		var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")
+								?? configuration.GetConnectionString(name);
+
+		services.AddDbContextPool<TContextService, TContextImplementation>(
+			options =>
+			{
+				options.UseNpgsql(connectionString);
+			},
+			128);
+
+		return services;
+	}
 }

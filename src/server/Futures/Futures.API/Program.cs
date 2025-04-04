@@ -26,7 +26,7 @@ var host = builder.Host;
 services
 	.AddCommon()
 	.AddExceptions()
-	.AddAuthorization(configuration)
+	// .AddAuthorization(configuration)
 	.AddSwagger()
 	.AddHealthChecks();
 

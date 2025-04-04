@@ -129,7 +129,14 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj": {
+                "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Domain\\Futures.Domain.csproj"
+              },
+              "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Domain\\Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -155,6 +162,10 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.3, )"
             }
           },
           "imports": [
@@ -270,6 +281,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj": {
+                "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Futures\\Futures.Application\\Futures.Application.csproj"
+              },
               "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Redis\\Redis.csproj": {
                 "projectPath": "C:\\my\\projects\\big_projects\\hyper-quant-futures\\src\\server\\Shared\\Redis\\Redis.csproj"
               }
@@ -299,6 +313,10 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             }
           },
           "imports": [

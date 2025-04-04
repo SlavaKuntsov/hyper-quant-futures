@@ -47,7 +47,7 @@ public static class AuthorizationExtension
 				});
 
 		services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
-
+		
 		services.Configure<AuthorizationOptions>(
 			configuration.GetSection(nameof(AuthorizationOptions)));
 

@@ -10,7 +10,7 @@ public static class SwaggerExtension
 	{
 		services.AddSwaggerGen(options =>
 		{
-			options.ExampleFilters();
+			// options.ExampleFilters();
 
 			options.AddSecurityDefinition("Bearer",
 				new OpenApiSecurityScheme
